@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+@layer utilities {
+  @media (max-width: 767px) {
+    .hide-swiper-arrows-mobile .swiper-button-next,
+    .hide-swiper-arrows-mobile .swiper-button-prev {
+      display: none !important;
+    }
+  }
+}
