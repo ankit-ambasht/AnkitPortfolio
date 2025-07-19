@@ -34,7 +34,7 @@ const About = () => {
             <h3 className="text-2xl font-semibold text-indigo-700 mb-2">🎓 Education</h3>
             <ul className="text-gray-700 dark:text-white space-y-2">
               <li><strong>Master of computer Application(MCA)</strong> – uttarakhand University Dehradun (2022–2024)</li>
-              <li>Completed courses on Python, Data Structures, and AI</li>
+              <li>Completed courses on Web Development and Computer Application</li>
             </ul>
           </div>
 
