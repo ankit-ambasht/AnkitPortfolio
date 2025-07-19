@@ -14,19 +14,19 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'your_service_id',      // Replace with your actual EmailJS service ID
-        'your_template_id',     // Replace with your template ID
+        'service_bcknzga',      // ✅ Your Service ID
+        'template_8gwl9qe',     // ✅ Your Template ID
         form.current,
-        'your_public_key'       // Replace with your public user ID (not secret key)
+        'wF_bXkArKj_Tg4frG'     // ✅ Your Public Key
       )
       .then(
-        (result) => {
-          setStatus('Message sent successfully!');
+        () => {
+          setStatus('✅ Message sent successfully!');
           form.current.reset();
         },
         (error) => {
-          setStatus('Something went wrong. Please try again.');
-          console.error(error.text);
+          setStatus('❌ Something went wrong. Please try again.');
+          console.error('EmailJS Error:', error.text);
         }
       )
       .finally(() => setLoading(false));
@@ -42,7 +42,7 @@ const Contact = () => {
             <div className="relative">
               <input
                 type="text"
-                name="name"
+                name="name" // ✅ MUST match variable in template
                 required
                 placeholder=" "
                 className="peer w-full border border-gray-300 dark:border-gray-700 rounded-lg px-4 pt-5 pb-2 bg-transparent text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -55,7 +55,7 @@ const Contact = () => {
             <div className="relative">
               <input
                 type="email"
-                name="email"
+                name="email" // ✅ MUST match variable in template
                 required
                 placeholder=" "
                 className="peer w-full border border-gray-300 dark:border-gray-700 rounded-lg px-4 pt-5 pb-2 bg-transparent text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -67,7 +67,7 @@ const Contact = () => {
 
             <div className="relative">
               <textarea
-                name="message"
+                name="message" // ✅ MUST match variable in template
                 rows="5"
                 required
                 placeholder=" "
@@ -89,7 +89,9 @@ const Contact = () => {
             </button>
 
             {status && (
-              <p className="text-center mt-4 text-sm font-medium text-green-600 dark:text-green-400">
+              <p className={`text-center mt-4 text-sm font-medium ${
+                status.startsWith('✅') ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+              }`}>
                 {status}
               </p>
             )}
